@@ -15,14 +15,17 @@
     "test:unit": "jest 'test/unit/'",
     "test:unit:watch": "npm run test:unit -- --watch",
     "test:integration": "jest --test-timeout=10000 'test/integration/'",
-    "test:integration:debug": "LOG_LEVEL=debug DEBUG=nock.* run-s test:integration"
+    "test:integration:debug": "LOG_LEVEL=debug DEBUG=nock.* run-s test:integration",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "author": "Brandon Keepers",
   "license": "ISC",
   "dependencies": {
     "deepmerge": "^4.2.2",
     "js-yaml": "^3.14.0",
-    "probot": "10.0.1"
+    "probot": "10.0.1",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@travi/any": "^2.0.12",
@@ -54,5 +57,6 @@
       ".env",
       "."
     ]
-  }
+  },
+  "snyk": true
 }
